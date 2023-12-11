@@ -15,7 +15,8 @@ if response.status_code == 200:
     data = response.json()
     temp = data['main']['temp']
     desc = data['weather'][0]['description']
-    print(f'Temperature: {temp} K')
+    celsius = temp - 273
+    print(f'Temperature: {celsius} C')
     print(f'Description: {desc}')
 else:
     print('Error fetching weather data')
